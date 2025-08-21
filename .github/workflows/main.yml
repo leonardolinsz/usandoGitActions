@@ -1,0 +1,23 @@
+# Nome do nosso workflow. Aparecerá na aba Actions do Github
+name: Olá Mundo
+
+# Define o evento que vai acionar o workflow.
+# Neste caso, qualquer 'push' para o repo
+on: [push]
+
+# Define os trabalhos (jobs) a serem executados
+jobs:
+  # O nome do nosso job. pode ser qualquer nome
+  dizer-ola:
+    # Define em qual tipo de máquina (runner) o job vai rodar
+    # 'ubuntu-latest' é uma máquina Linux fornecida pelo GitHub
+    runs-on: ubuntu-latest
+
+    # Define os passos (steps) que compõem este job
+    steps:
+      - name: Imprime uma mensagem no console
+        # run executa um comando de linha de terminal do runner
+        run: echo "Olá Mundo! Esta é minha primeira GitHub Actions"
+
+      - name: Imprime outra mensagem
+        run: echo "Até a próxima automação!"
